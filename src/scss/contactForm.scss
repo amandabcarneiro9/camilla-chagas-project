@@ -1,0 +1,84 @@
+@import './variables.scss';
+@import './media-queries.scss';
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  color: $third-color;
+  font-size: 18px;
+
+  .__checkbox {
+    display: grid;
+    grid-template-columns: min-content auto;
+    grid-gap: 6px;
+    justify-content: start;
+  }
+
+  label {
+    margin-bottom: 5px;
+  }
+
+  input {
+    background: transparent;
+    color: $third-color;
+    border: 1px solid $third-color;
+    &::placeholder {
+      color: $third-color;
+      opacity: 1;
+    }
+  }
+
+  input[type='radio'] {
+    appearance: unset;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+
+    &:checked::after {
+      content: '';
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background-color: $third-color;
+      display: inline-block;
+    }
+  }
+
+  input[type='text'],
+  input[type='email'] {
+    width: 80%;
+    height: 38px;
+  }
+
+  input[type='submit'] {
+    margin-top: 10px;
+    margin-left: 100px;
+    width: 50%;
+    height: 38px;
+    text-transform: uppercase;
+
+    &:hover {
+      background-color: $third-color;
+      color: $forth-color;
+    }
+  }
+
+  span {
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
+  textarea {
+    background: transparent;
+    color: $third-color;
+    width: 80%;
+
+    &::placeholder {
+      color: $third-color;
+      opacity: 1;
+    }
+  }
+}

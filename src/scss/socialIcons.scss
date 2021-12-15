@@ -1,0 +1,12 @@
+@import './variables.scss';
+
+.__media-links {
+  a {
+    margin-left: 10px;
+    color: $third-color;
+    font-size: 25px;
+    &:hover {
+      color: $primary-color;
+    }
+  }
+}

@@ -1,0 +1,72 @@
+@import './variables.scss';
+@import './media-queries.scss';
+
+.footer {
+  text-align: center;
+  margin-top: 50px;
+
+  h2 {
+    font-size: 22px;
+    color: $third-color;
+    text-transform: uppercase;
+  }
+
+  .__title {
+    color: $third-color;
+    font-size: 18px;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+
+    input[type='email'] {
+      width: 30vw;
+      margin-bottom: 10px;
+      border: $third-color 1px solid;
+      background: transparent;
+      height: 26px;
+      color: $third-color;
+    }
+
+    input[type='submit'] {
+      width: 30.5vw;
+      height: 26px;
+      background-color: $primary-color;
+      border: $primary-color 1px solid;
+      font-size: 20px;
+
+      &:hover {
+        background-color: $third-color;
+        color: $primary-color;
+      }
+    }
+  }
+
+  .__information {
+    display: flex;
+    flex-direction: column;
+    color: $third-color;
+    margin-top: 20px;
+    font-size: 16px;
+
+    .__phone {
+      color: $primary-color;
+      margin-bottom: 10px;
+    }
+
+    .__place {
+      margin-bottom: 20px;
+    }
+
+    .__made-by {
+      color: $third-color;
+      margin-top: 50px;
+      margin-bottom: 50px;
+      font-size: 14px;
+    }
+  }
+}

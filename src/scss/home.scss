@@ -1,0 +1,13 @@
+@import './media-queries.scss';
+@import './variables.scss';
+
+.home {
+  margin-top: 200px;
+  text-align: center;
+  margin-bottom: 200px;
+
+  img {
+    margin: 0 auto;
+    max-width: 90%;
+  }
+}

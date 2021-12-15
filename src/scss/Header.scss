@@ -1,0 +1,122 @@
+@import './variables.scss';
+@import './media-queries.scss';
+
+.header {
+  font-family: 'Nunito', sans-serif;
+  display: grid;
+  grid-template-areas: 'nada links media-links';
+  grid-template-columns: 100px auto 100px;
+  margin-top: 50px;
+  padding: 0 100px;
+  position: relative;
+  font-size: 28px;
+
+  @include for-phone {
+    &.--menu-opened {
+      margin: 0;
+      padding: 50px 100px;
+      box-sizing: border-box;
+      width: 100vw;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      background: $forth-color;
+
+      .__links {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .__socialIcons {
+        position: absolute;
+        right: 40px;
+        top: 60px;
+      }
+    }
+  }
+
+  .__links {
+    display: none;
+    margin-top: 50px;
+
+    @include for-desktop-and-large {
+      grid-area: links;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    @include for-phone {
+      .__dropdown > a {
+        position: relative;
+        &::after {
+          content: '▾';
+          position: absolute;
+          left: 100%;
+          top: 10px;
+          color: white;
+          display: inline-block;
+          transition: transform 300ms ease-in-out;
+        }
+      }
+    }
+    .__dropdown div {
+      display: none;
+    }
+
+    @include for-phone {
+      .__dropdown.--showing {
+        > a {
+          &::after {
+            transform: scaleY(-1);
+          }
+        }
+        div {
+          display: flex;
+          flex-direction: column;
+          margin-left: 20px;
+        }
+      }
+    }
+
+    @include for-desktop-and-large {
+      .__dropdown:hover div {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        margin: 0;
+        background-color: $forth-color;
+      }
+    }
+
+    a {
+      color: $third-color;
+      text-decoration: none;
+      padding: 8px;
+      display: inline-block;
+
+      &:hover {
+        color: $primary-color;
+      }
+    }
+  }
+
+  .hamburger-react {
+    display: none;
+
+    @include for-phone {
+      display: block;
+      color: white;
+    }
+  }
+
+  .__socialIcons {
+    position: absolute;
+    right: 40px;
+    top: 15px;
+
+    @include for-desktop-and-large {
+      right: 100px;
+      top: 60px;
+    }
+  }
+}
